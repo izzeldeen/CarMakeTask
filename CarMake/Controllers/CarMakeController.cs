@@ -7,10 +7,10 @@ namespace CarMake.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class CarMakeController : ControllerBase
+    public class ModelsController : ControllerBase
     {
         private readonly ICarMakeService carMakeService;
-        public CarMakeController(ICarMakeService carMakeService)
+        public ModelsController(ICarMakeService carMakeService)
         {
             this.carMakeService= carMakeService;
         }
