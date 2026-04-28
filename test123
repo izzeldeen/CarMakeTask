@@ -1,0 +1,13 @@
+SELECT dev.UserName, dev.BirthDate AS DevBirthDate, test.BirthDate AS TestBirthDate
+FROM Mullak_Dev.dbo.AbpUsers dev
+INNER JOIN Mullak_Test.dbo.AbpUsers test
+    ON dev.UserName = test.UserName
+WHERE test.BirthDate IS NOT NULL;
+
+
+UPDATE dev
+SET dev.BirthDate = test.BirthDate
+FROM Mullak_Dev.dbo.AbpUsers dev
+INNER JOIN Mullak_Test.dbo.AbpUsers test
+    ON dev.UserName = test.UserName
+WHERE test.BirthDate IS NOT NULL;
